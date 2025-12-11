@@ -31,12 +31,13 @@ export class LoginPage extends BasePage {
         this.loginButton = page.locator('button').filter({ hasText: /เข้าสู่ระบบ|Login|Sign in/i });
 
         // Social login buttons
-        this.googleLoginButton = page.locator('button').filter({ hasText: /Google/i });
+        // this.googleLoginButton = page.locator('button').filter({ hasText: /Google/i });
         this.facebookLoginButton = page.locator('button').filter({ hasText: /Facebook/i });
-
+        this.googleLoginButton = page.getByRole('button', { name: '🔵 Continue with Google' });
         // Links
-        this.createAccountLink = page.locator('a[href="/create-account"]');
+        // this.createAccountLink = page.locator('a[href="/create-account"]');
         this.forgotPasswordLink = page.locator('a[href="/forgot-password"]');
+        this.createAccountLink = page.getByRole('link', { name: 'สมัครสมาชิก' });
 
         // Logo
         this.logo = page.locator('img[src="/images/logo.svg"]');

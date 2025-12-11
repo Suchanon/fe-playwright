@@ -18,6 +18,7 @@ export class LoginPage extends BasePage {
     readonly createAccountLink: Locator;
     readonly forgotPasswordLink: Locator;
     readonly logo: Locator;
+    readonly pageTitle: Locator;
 
     constructor(page: Page) {
         super(page);
@@ -39,6 +40,9 @@ export class LoginPage extends BasePage {
 
         // Logo
         this.logo = page.locator('img[src="/images/logo.svg"]');
+
+        //bank-test
+        this.pageTitle = page.getByRole('heading', { name: 'เข้าสู่ระบบ' });
     }
 
     /**

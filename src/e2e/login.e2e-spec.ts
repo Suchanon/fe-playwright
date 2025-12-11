@@ -16,6 +16,16 @@ test.describe('Login Flow', () => {
         await loginPage.goto();
     });
 
+    test('should display login heading in Thai', async ({ page }) => {
+        await loginPage.waitForReady();
+
+        // Use getByRole to find the heading
+        const heading = page.getByRole('heading', { name: 'เข้าสู่ระบบ' });
+
+        // Assert it's visible
+        await expect(heading).toBeVisible();
+    });
+
     test('should display login page correctly', async ({ page }) => {
         // Verify login page elements are visible
         await loginPage.waitForReady();

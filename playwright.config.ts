@@ -32,8 +32,8 @@ export default defineConfig({
 
     // Shared settings for all projects
     use: {
-        // Base URL for navigation - mock app runs on port 3000
-        baseURL: 'http://localhost:3000',
+        // Base URL for navigation - Real test environment
+        baseURL: process.env.BASE_URL || 'https://ezez.lol',
 
         // Collect trace when retrying a failed test
         trace: 'on-first-retry',
@@ -62,12 +62,13 @@ export default defineConfig({
         },
     ],
 
-    // Auto-start mock Next.js app before running tests
-    webServer: {
-        command: 'npm run dev',
-        cwd: './mock-app',
-        url: 'http://localhost:3000',
-        reuseExistingServer: !process.env.CI,
-        timeout: 120000,
-    },
+    // NOTE: webServer disabled for real test environment
+    // Uncomment to use mock app instead:
+    // webServer: {
+    //     command: 'npm run dev',
+    //     cwd: './mock-app',
+    //     url: 'http://localhost:3000',
+    //     reuseExistingServer: !process.env.CI,
+    //     timeout: 120000,
+    // },
 });

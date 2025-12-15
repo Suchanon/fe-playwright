@@ -31,3 +31,18 @@ The user is prompted to enter their business name. The test fills this field ("T
 ### Step 3: Verification Wall (Expected Limitation)
 Upon submitting Step 1, unverified accounts are redirected to `/create-account/verify-email`. The test detects this known limitation and marks the test as **Passed**, confirming the flow works up to the backend restriction.
 ![Onboarding Blocked](./screenshots/onboarding-blocked.png)
+
+---
+
+## 3. Future Testing: Negative Cases (Unhappy Path)
+To ensure robustness, the following "Unhappy Path" scenarios should be automated in the future:
+
+### Registration Failures
+- [ ] **Invalid Email Format**: Try signing up with `user@domain` (missing `.com`).
+- [ ] **Existing Email**: Try signing up with an email that is already registered.
+- [ ] **Weak Password**: Try signing up with a password shorter than required length.
+- [ ] **Empty Fields**: Try clicking "Create Account" without filling in the form.
+
+### Onboarding Failures
+- [ ] **Skip Mandatory Fields**: Try clicking "Next" on the survey without filling in the business name.
+- [ ] **Invalid Inputs**: Try entering special characters or emojis in fields that shouldn't accept them.

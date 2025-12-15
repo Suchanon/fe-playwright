@@ -50,7 +50,7 @@ export class OnboardingPage extends BasePage {
         await expect(this.page).toHaveURL(/\/survey\/step-1/);
         console.log('Arrived at Step 1.');
 
-        // Find input (using the fallback logic that worked in the test)
+        // Find input (using robust fallback which matches recording's "input" selector)
         const businessInput = this.page.getByRole('textbox').first();
         await businessInput.waitFor({ state: 'visible', timeout: 10000 });
         await businessInput.fill(businessName);
@@ -99,4 +99,53 @@ export class OnboardingPage extends BasePage {
     }
 
 
+
+    /**
+     * Complete Step 2: Business Category (Dropdown and Confirm)
+     * Recording: Select -> Option 18 -> Confirm -> Next
+     */
+    async completeStep2() {
+        await expect(this.page).toHaveURL(/\/survey\/step-2/);
+        console.log('Arrived at Step 2.');
+
+        // Select Category
+        await this.page.locator('div.d0lyL button').click(); // Dropdown trigger from recording
+        await this.page.locator('label:nth-of-type(18) > div').click(); // Specific option from recording
+
+        // Confirm Selection
+        await this.page.getByRole('button', { name: 'ยืนยัน' }).click();
+
+        // Click Next
+        await this.nextButton.click();
+    }
+
+    /**
+     * Complete Step 3: Employee Count
+     * Recording: Option 2 -> Next
+     */
+    async completeStep3() {
+        await expect(this.page).toHaveURL(/\/survey\/step-3/);
+        console.log('Arrived at Step 3.');
+
+        // Select Option 2 ("1-5 people" based on previous context, or just 2nd option)
+        // Recording used: label:nth-of-type(2) > div
+        await this.page.locator('label:nth-of-type(2) > div').click();
+
+        // Click Next
+        await this.nextButton.click();
+    }
+
+    /**
+     * Complete Step 4: Connections/Social (Skip)
+     * Recording: Button 2 in div.JjL5V
+     */
+    async completeStep4() {
+        await expect(this.page).toHaveURL(/\/survey\/step-4/);
+        console.log('Arrived at Step 4.');
+
+        // Recording used a specific button structure for "Skip" or "Next"
+        // "div.JjL5V > button:nth-of-type(2) > div"
+        // Assuming this is the "Skip" or final "Next" button
+        await this.page.locator('div.JjL5V > button:nth-of-type(2)').click();
+    }
 }

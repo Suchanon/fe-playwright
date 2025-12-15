@@ -51,16 +51,16 @@ test.describe('Onboarding Flow - Real Test Environment (ezez.lol)', () => {
         if (url.includes('/sign-in') || (await page.getByRole('button', { name: 'ลงชื่อเข้าใช้' }).isVisible())) {
             console.log('Detected Sign In state during verification block handling. Attempting re-login...');
 
-            // Reload to clear any stuck modals/overlays
+            // Explicitly navigate to Sign In to clear state (more robust than reload)
             try {
-                await page.reload({ waitUntil: 'domcontentloaded' });
-                // Clear storage to remove stale session data causing repeated timeouts
-                await page.evaluate(() => {
-                    localStorage.clear();
-                    sessionStorage.clear();
-                });
+                await page.goto('https://ezez.lol/sign-in', { waitUntil: 'domcontentloaded' });
+                // Commented out as per user request to test if this causes issues
+                // await page.evaluate(() => {
+                //     localStorage.clear();
+                //     sessionStorage.clear();
+                // });
             } catch (e) {
-                console.log('Reload/Clear Storage failed, continuing...');
+                console.log(`Recovery navigation/clearing failed: ${e}`);
             }
 
             const loginPage = new LoginPage(page);
@@ -88,20 +88,14 @@ test.describe('Onboarding Flow - Real Test Environment (ezez.lol)', () => {
             return; // Test ends successfully here if blocked
         }
 
-        // If we continue (future proofing), we would add Step 2 logic here using onboardingPage
-        await expect(page).toHaveURL(/\/survey\/step-2/);
-        // ... more steps would follow
-        // Step 3: Employee Count
-        await expect(page).toHaveURL(/\/survey\/step-3/);
-        // Select '1 - 5 people' (1 - 5 คน)
-        await page.locator('label').filter({ hasText: '- 5 คน' }).click();
-        // Click "Next"
-        await page.getByRole('button', { name: 'ถัดไป' }).click();
+        // --- Step 2: Business Category ---
+        await onboardingPage.completeStep2();
 
-        // Step 4: Social Connection (Skip)
-        await expect(page).toHaveURL(/\/survey\/step-4/);
-        // Click "Skip" (ข้าม)
-        await page.getByRole('button', { name: 'ข้าม' }).click();
+        // --- Step 3: Employee Count ---
+        await onboardingPage.completeStep3();
+
+        // --- Step 4: Social Connection (Skip) ---
+        await onboardingPage.completeStep4();
 
         // --- VERIFICATION ---
         // Verify redirection to Dashboard

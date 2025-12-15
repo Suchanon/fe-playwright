@@ -1,0 +1,597 @@
+{
+    "title": "Recording 12/15/2025 at 5:41:43 PM",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1280,
+            "height": 720,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://ezez.lol/sign-in",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://ezez.lol/sign-in",
+                    "title": "MozFlow CDP - Customer Data Platform"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/สร้างบัญชีใหม่"
+                ],
+                [
+                    "div.pX4rn > div:nth-of-type(1) a"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div[2]/div[1]/div/div[7]/div[1]/span/a"
+                ],
+                [
+                    "pierce/div.pX4rn > div:nth-of-type(1) a"
+                ],
+                [
+                    "text/สร้างบัญชีใหม่"
+                ]
+            ],
+            "offsetY": 5.5,
+            "offsetX": 40.5390625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "button:nth-of-type(3) > div.IYfyo"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div[2]/div[1]/div/button[3]/div[2]"
+                ],
+                [
+                    "pierce/button:nth-of-type(3) > div.IYfyo"
+                ],
+                [
+                    "text/ดำเนินการต่อด้วย"
+                ]
+            ],
+            "offsetY": 4.5,
+            "offsetX": 82.03125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/อีเมล"
+                ],
+                [
+                    "div:nth-of-type(4) input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div[2]/div[2]/div/div[4]/div[2]/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(4) input"
+                ]
+            ],
+            "offsetY": 16,
+            "offsetX": 151
+        },
+        {
+            "type": "change",
+            "value": "erfeferfewfwe1@comfythings.com",
+            "selectors": [
+                [
+                    "aria/อีเมล"
+                ],
+                [
+                    "div:nth-of-type(4) input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div[2]/div[2]/div/div[4]/div[2]/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(4) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/ชื่อ"
+                ],
+                [
+                    "div:nth-of-type(3) input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div[2]/div[2]/div/div[3]/div[2]/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) input"
+                ]
+            ],
+            "offsetY": 22,
+            "offsetX": 110
+        },
+        {
+            "type": "change",
+            "value": "erfeferfewfwe1@comfythings.com",
+            "selectors": [
+                [
+                    "aria/ชื่อ"
+                ],
+                [
+                    "div:nth-of-type(3) input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div[2]/div[2]/div/div[3]/div[2]/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Shift"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/ชื่อ"
+                ],
+                [
+                    "div:nth-of-type(3) input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div[2]/div[2]/div/div[3]/div[2]/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) input"
+                ]
+            ],
+            "offsetY": 24,
+            "offsetX": 142
+        },
+        {
+            "type": "keyUp",
+            "key": "Shift",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "erfeferfewfwe",
+            "selectors": [
+                [
+                    "aria/ชื่อ"
+                ],
+                [
+                    "div:nth-of-type(3) input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div[2]/div[2]/div/div[3]/div[2]/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(3) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/รหัสผ่าน"
+                ],
+                [
+                    "div:nth-of-type(5) input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div[2]/div[2]/div/div[5]/div[2]/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(5) input"
+                ]
+            ],
+            "offsetY": 25,
+            "offsetX": 165
+        },
+        {
+            "type": "change",
+            "value": "1",
+            "selectors": [
+                [
+                    "aria/รหัสผ่าน"
+                ],
+                [
+                    "div:nth-of-type(5) input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div[2]/div[2]/div/div[5]/div[2]/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(5) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/ยืนยันรหัสผ่าน"
+                ],
+                [
+                    "div:nth-of-type(6) input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div[2]/div[2]/div/div[6]/div[2]/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(6) input"
+                ]
+            ],
+            "offsetY": 18,
+            "offsetX": 131
+        },
+        {
+            "type": "change",
+            "value": "1",
+            "selectors": [
+                [
+                    "aria/ยืนยันรหัสผ่าน"
+                ],
+                [
+                    "div:nth-of-type(6) input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div[2]/div[2]/div/div[6]/div[2]/div[1]/input"
+                ],
+                [
+                    "pierce/div:nth-of-type(6) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.W1WRD input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div[2]/div[2]/div/div[7]/div[1]/div/input"
+                ],
+                [
+                    "pierce/div.W1WRD input"
+                ]
+            ],
+            "offsetY": 7.5,
+            "offsetX": 9
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/สร้างบัญชี"
+                ],
+                [
+                    "button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div[2]/div[2]/div/div[8]/button"
+                ],
+                [
+                    "pierce/button"
+                ]
+            ],
+            "offsetY": 12,
+            "offsetX": 48
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "c"
+        },
+        {
+            "type": "keyUp",
+            "key": "Meta",
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Please enter OTP character 1"
+                ],
+                [
+                    "input:nth-of-type(1)"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div[2]/div[2]/div/div[4]/div[2]/input[1]"
+                ],
+                [
+                    "pierce/input:nth-of-type(1)"
+                ]
+            ],
+            "offsetY": 30,
+            "offsetX": 45
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Meta"
+        },
+        {
+            "type": "keyUp",
+            "key": "Meta",
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/ยืนยัน"
+                ],
+                [
+                    "button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div[2]/div[2]/div/div[5]/button"
+                ],
+                [
+                    "pierce/button"
+                ]
+            ],
+            "offsetY": 32,
+            "offsetX": 113
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/ชื่อธุรกิจ / ชื่อบริษัท"
+                ],
+                [
+                    "input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div/div[2]/div[3]/div/div/div[2]/div/input"
+                ],
+                [
+                    "pierce/input"
+                ]
+            ],
+            "offsetY": 35.5,
+            "offsetX": 443
+        },
+        {
+            "type": "change",
+            "value": "24696",
+            "selectors": [
+                [
+                    "aria/ชื่อธุรกิจ / ชื่อบริษัท"
+                ],
+                [
+                    "input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div/div[2]/div[3]/div/div/div[2]/div/input"
+                ],
+                [
+                    "pierce/input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#root > div > div > div"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div"
+                ],
+                [
+                    "pierce/#root > div > div > div"
+                ]
+            ],
+            "offsetY": 437.5,
+            "offsetX": 5,
+            "duration": 433.5
+        },
+        {
+            "type": "change",
+            "value": "eweewfwefwe24696",
+            "selectors": [
+                [
+                    "aria/ชื่อธุรกิจ / ชื่อบริษัท"
+                ],
+                [
+                    "input"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div/div[2]/div[3]/div/div/div[2]/div/input"
+                ],
+                [
+                    "pierce/input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "i"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div/div[3]/button/div/div[2]/i"
+                ],
+                [
+                    "pierce/i"
+                ]
+            ],
+            "offsetY": 16.5,
+            "offsetX": 7
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/เลือก"
+                ],
+                [
+                    "div.d0lyL button"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div/div[2]/div[3]/div[2]/button"
+                ],
+                [
+                    "pierce/div.d0lyL button"
+                ]
+            ],
+            "offsetY": 24.5,
+            "offsetX": 22.9296875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "label:nth-of-type(18) > div"
+                ],
+                [
+                    "xpath//html/body/div[3]/div[2]/div/div/div/div[2]/div/div[2]/label[18]/div"
+                ],
+                [
+                    "pierce/label:nth-of-type(18) > div"
+                ]
+            ],
+            "offsetY": 17.5,
+            "offsetX": 96.3359375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/ยืนยัน"
+                ],
+                [
+                    "button.tvAkI"
+                ],
+                [
+                    "xpath//html/body/div[3]/div[2]/div/div/div/div[3]/button[2]"
+                ],
+                [
+                    "pierce/button.tvAkI"
+                ],
+                [
+                    "text/ยืนยัน"
+                ]
+            ],
+            "offsetY": 10.5,
+            "offsetX": 179.71875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "button:nth-of-type(2) div.IYfyo"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div/div[3]/button[2]/div/div[1]"
+                ],
+                [
+                    "pierce/button:nth-of-type(2) div.IYfyo"
+                ],
+                [
+                    "text/ถัดไป"
+                ]
+            ],
+            "offsetY": 8.5,
+            "offsetX": 15.4140625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "label:nth-of-type(2) > div"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div/div[2]/div/div[3]/label[2]/div"
+                ],
+                [
+                    "pierce/label:nth-of-type(2) > div"
+                ]
+            ],
+            "offsetY": 9,
+            "offsetX": 107.5546875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "button:nth-of-type(2) div.IYfyo"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div/div[3]/button[2]/div/div[1]"
+                ],
+                [
+                    "pierce/button:nth-of-type(2) div.IYfyo"
+                ],
+                [
+                    "text/ถัดไป"
+                ]
+            ],
+            "offsetY": 1,
+            "offsetX": 30.4140625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.JjL5V > button:nth-of-type(2) > div"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/div/div/div[3]/button[2]/div"
+                ],
+                [
+                    "pierce/div.JjL5V > button:nth-of-type(2) > div"
+                ]
+            ],
+            "offsetY": 3,
+            "offsetX": 25.578125
+        }
+    ]
+}

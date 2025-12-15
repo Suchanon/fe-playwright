@@ -31,8 +31,8 @@ export class CreateAccountPage extends BasePage {
         // Terms Checkbox
         this.termsCheckbox = page.getByRole('checkbox');
 
-        // Link - initializing to satisfy TS, though mostly used on login page
-        this.createAccountLink = page.getByRole('link', { name: 'สมัครสมาชิก' });
+        // Link - updated to match user recording
+        this.createAccountLink = page.getByRole('link', { name: 'สร้างบัญชีใหม่' });
 
         // Submit button
         this.submitButton = page.getByRole('button', { name: 'สร้างบัญชี' });

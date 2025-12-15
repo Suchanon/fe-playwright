@@ -1,5 +1,7 @@
 # FE Playwright E2E Testing
 
+> **Last Updated:** 2025-12-15 | **Maintained By:** Suchanon
+
 A self-contained Playwright E2E testing project for frontend testing, featuring a mock Next.js login app.
 
 ## Project Structure
@@ -106,6 +108,34 @@ The login flow tests cover:
 - ✅ Navigation to forgot password page
 - ✅ Navigation to create account page
 - ✅ Successful login redirects to dashboard
+
+## EZez.lol Live Tests (Real Environment)
+
+We have added E2E tests that run against the live `https://ezez.lol` environment.
+
+### ⚠️ Important Warning
+**The Create Account test creates REAL accounts in the production system.**
+- It generates a unique email every time: `feplaywirghttesting<timestamp>@comfythings.com`.
+- This ensures tests pass reliably but will accumulate test users in the database.
+
+### Running Live Tests
+
+```bash
+# Run Create Account Test
+npx playwright test src/e2e/ezez-create-account.e2e-spec.ts --project=chromium --headed
+
+# Run Onboarding Test
+npx playwright test src/e2e/ezez-onboarding.e2e-spec.ts --project=chromium --headed
+
+# Run Both
+npx playwright test src/e2e/ezez-*.e2e-spec.ts --project=chromium --headed
+```
+
+### Test Reports
+Visual test reports with screenshots are generated after runs.
+- **Location**: `test-reports/`
+- **Main Report**: [ezez-create-account-onboarding-report.md](test-reports/ezez-create-account-onboarding-report.md)
+- **Screenshots**: `test-reports/screenshots/`
 
 ## Extending Tests
 

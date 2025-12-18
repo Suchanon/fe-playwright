@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/test';
+import { LoginPage } from '../pages/login.page';
 
 /**
- * Login Flow Tests for Real Test Environment (ezez.lol)
- * 
- * These tests are designed for the real test environment at https://ezez.lol
- * Make sure to update playwright.config.ts baseURL before running these tests.
+ * Login Flow Tests for Dev Environment
+ *
+ * These tests are designed for the Dev Environment
  */
-test.describe('Login Flow - Real Test Environment (ezez.lol)', () => {
+test.describe('Login Flow - Dev Environment', () => {
 
     test.beforeEach(async ({ page }) => {
         await page.goto('/sign-in');

@@ -2,9 +2,9 @@ import { test, expect } from '@playwright/test';
 import { CreateAccountPage } from '../pages';
 
 /**
- * Sign Up Flow Tests for Real Test Environment (ezez.lol)
+ * Sign Up Flow Tests for Dev Environment
  */
-test.describe('Sign Up Flow - Real Test Environment (ezez.lol)', () => {
+test.describe('Sign Up Flow - Dev Environment', () => {
 
 
 
@@ -14,9 +14,14 @@ test.describe('Sign Up Flow - Real Test Environment (ezez.lol)', () => {
 
         // 1. Generate dynamic test data
         const timestamp = Date.now();
-        const testEmail = `feplaywirghttesting${timestamp}@comfythings.com`;
+        const failBackEmail = `feplaywirghttesting${timestamp}@comfythings.com`
+        const baseEmail = process.env.OTP_BYPASS_EMAIL || failBackEmail
+        const [user, domain] = baseEmail.split('@');
+        const testEmail = process.env.OTP_BYPASS_EMAIL
+            ? `${user}+${timestamp}@${domain}`
+            : failBackEmail;
         const testName = 'feplaywirghttesting1';
-        const testPassword = '1';
+        const testPassword = process.env.OTP_BYPASS_CODE || '1';
 
         // 2. Navigation
         await createAccountPage.goto();

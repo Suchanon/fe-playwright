@@ -1,10 +1,23 @@
 import { test, expect } from '@playwright/test';
 import { CreateAccountPage, OnboardingPage, LoginPage } from '../pages';
+import { execSync } from 'child_process';
 
 /**
- * Onboarding Flow Tests for Real Test Environment (ezez.lol)
+ * Onboarding Flow Tests for Dev Environment
  */
-test.describe('Onboarding Flow - Real Test Environment (ezez.lol)', () => {
+test.describe('Onboarding Flow - Dev Environment', () => {
+
+    // Automatically delete the test user before each test
+    test.beforeEach(async () => {
+        try {
+            execSync('node ../MozFlow-hub/auth/scripts/delete_test_user.js', {
+                cwd: process.cwd(),
+                stdio: 'pipe'
+            });
+        } catch (e) {
+            // Ignore errors if user doesn't exist
+        }
+    });
 
     test('should successfully onboard a new user', async ({ page }) => {
         test.setTimeout(120000); // Increase test timeout to 120s for flaky environment
@@ -15,9 +28,14 @@ test.describe('Onboarding Flow - Real Test Environment (ezez.lol)', () => {
         // --- Setup: Create a fresh account ---
         // 1. Generate dynamic test data
         const timestamp = Date.now();
-        const testEmail = `feplaywirghttesting${timestamp}@comfythings.com`;
+        const baseEmail = process.env.OTP_BYPASS_EMAIL || `feplaywirghttesting${timestamp}@comfythings.com`;
+
+        // Use EXACT email if OTP_BYPASS_EMAIL is provided (User cleaned up from DB)
+        // Otherwise use aliased fallback.
+        const testEmail = process.env.OTP_BYPASS_EMAIL || baseEmail;
+
         const testName = 'feplaywirghttesting1';
-        const testPassword = '1';
+        const testPassword = process.env.OTP_BYPASS_CODE || '12345';
 
         // 2. Navigation & Account Creation
         await createAccountPage.goto();
@@ -45,7 +63,9 @@ test.describe('Onboarding Flow - Real Test Environment (ezez.lol)', () => {
         // Detects if we are blocked by email verification OR session timeout
         const isContinued = await onboardingPage.handleVerificationBlock();
 
-        // Check if we need to recover (e.g. we are still at Sign In page effectively)
+        // Stabilize: Wait briefly to see if we get redirected to Sign In (due to delayed 401)
+        await page.waitForTimeout(2000);
+
         // Check if we need to recover (e.g. we are still at Sign In page effectively)
         const url = page.url();
         if (url.includes('/sign-in') || (await page.getByRole('button', { name: 'ลงชื่อเข้าใช้' }).isVisible())) {
@@ -53,12 +73,7 @@ test.describe('Onboarding Flow - Real Test Environment (ezez.lol)', () => {
 
             // Explicitly navigate to Sign In to clear state (more robust than reload)
             try {
-                await page.goto('https://ezez.lol/sign-in', { waitUntil: 'domcontentloaded' });
-                // Commented out as per user request to test if this causes issues
-                // await page.evaluate(() => {
-                //     localStorage.clear();
-                //     sessionStorage.clear();
-                // });
+                await page.goto('/sign-in', { waitUntil: 'domcontentloaded' });
             } catch (e) {
                 console.log(`Recovery navigation/clearing failed: ${e}`);
             }
@@ -94,7 +109,7 @@ test.describe('Onboarding Flow - Real Test Environment (ezez.lol)', () => {
         // --- Step 3: Employee Count ---
         await onboardingPage.completeStep3();
 
-        // --- Step 4: Social Connection (Skip) ---
+        // --- Step 4: Social Connection ---
         await onboardingPage.completeStep4();
 
         // --- VERIFICATION ---

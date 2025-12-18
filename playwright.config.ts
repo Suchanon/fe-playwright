@@ -49,6 +49,9 @@ export default defineConfig({
 
         // Timeout for each action
         actionTimeout: 10000,
+
+        // Ignore HTTPS errors for local dev with self-signed certs
+        ignoreHTTPSErrors: true,
     },
 
     // Timeout for each test
